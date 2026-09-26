@@ -24,18 +24,18 @@ export const SectionHeader: React.FC<SectionHeaderProps> = ({
   const renderIcon = () => {
     switch (icon) {
       case 'smartphone':
-        return <Smartphone className="w-5 h-5 text-slate-700" />;
+        return <Smartphone className="w-5 h-5 text-slate-700 dark:text-slate-200" />;
       case 'cpu':
-        return <Cpu className="w-5 h-5 text-slate-700" />;
+        return <Cpu className="w-5 h-5 text-slate-700 dark:text-slate-200" />;
       case 'briefcase':
-        return <Briefcase className="w-5 h-5 text-slate-700" />;
+        return <Briefcase className="w-5 h-5 text-slate-700 dark:text-slate-200" />;
       case 'mail':
-        return <Mail className="w-5 h-5 text-slate-700" />;
+        return <Mail className="w-5 h-5 text-slate-700 dark:text-slate-200" />;
       case 'sparkles':
-        return <Sparkles className="w-5 h-5 text-slate-700" />;
+        return <Sparkles className="w-5 h-5 text-slate-700 dark:text-slate-200" />;
       case 'layers':
       default:
-        return <Layers className="w-5 h-5 text-slate-700" />;
+        return <Layers className="w-5 h-5 text-slate-700 dark:text-slate-200" />;
     }
   };
 
@@ -48,29 +48,29 @@ export const SectionHeader: React.FC<SectionHeaderProps> = ({
       )}
     >
       {/* Floating Squircle Icon Badge */}
-      <div className="w-12 h-12 rounded-2xl bg-white border border-slate-200/80 shadow-sm flex items-center justify-center text-slate-800">
+      <div className="w-12 h-12 rounded-2xl bg-white dark:bg-slate-900 border border-slate-200/80 dark:border-white/10 shadow-sm flex items-center justify-center text-slate-800 dark:text-slate-200">
         {renderIcon()}
       </div>
 
       {tag && (
         <div
           className={cn(
-            'inline-flex items-center gap-2 font-mono text-xs tracking-widest uppercase font-semibold text-orange-600',
+            'inline-flex items-center gap-2 font-mono text-xs tracking-widest uppercase font-semibold text-orange-600 dark:text-orange-400',
             align === 'center' && 'justify-center'
           )}
         >
-          {number && <span className="text-slate-400">{number}</span>}
-          {number && <span className="text-slate-300">//</span>}
+          {number && <span className="text-slate-400 dark:text-slate-500">{number}</span>}
+          {number && <span className="text-slate-300 dark:text-slate-700">//</span>}
           <span>{tag}</span>
         </div>
       )}
 
-      <h2 className="text-3xl md:text-5xl font-extrabold tracking-tight text-slate-900 leading-[1.12]">
+      <h2 className="text-3xl md:text-5xl font-extrabold tracking-tight text-slate-900 dark:text-white leading-[1.12]">
         {title}
       </h2>
 
       {subtitle && (
-        <p className="text-sm md:text-base text-slate-600 leading-relaxed max-w-2xl font-normal">
+        <p className="text-sm md:text-base text-slate-600 dark:text-slate-300 leading-relaxed max-w-2xl font-normal">
           {subtitle}
         </p>
       )}

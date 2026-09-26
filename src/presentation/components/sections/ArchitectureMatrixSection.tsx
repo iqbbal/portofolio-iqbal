@@ -12,7 +12,6 @@ import {
   Terminal, 
   Zap,
 } from 'lucide-react';
-import { cn } from '@/lib/utils';
 
 interface ArchitectureMatrixSectionProps {
   matrix: TechnicalMatrixResult;
@@ -24,16 +23,16 @@ export const ArchitectureMatrixSection: React.FC<ArchitectureMatrixSectionProps>
   const getCategoryIcon = (iconId: string) => {
     switch (iconId) {
       case 'smartphone':
-        return <Smartphone className="w-4 h-4 text-orange-600" />;
+        return <Smartphone className="w-4 h-4 text-orange-600 dark:text-orange-400" />;
       case 'layers':
-        return <Layers className="w-4 h-4 text-sky-600" />;
+        return <Layers className="w-4 h-4 text-sky-600 dark:text-sky-400" />;
       case 'database':
-        return <Database className="w-4 h-4 text-emerald-600" />;
+        return <Database className="w-4 h-4 text-emerald-600 dark:text-emerald-400" />;
       case 'cpu':
-        return <Cpu className="w-4 h-4 text-purple-600" />;
+        return <Cpu className="w-4 h-4 text-purple-600 dark:text-purple-400" />;
       case 'terminal':
       default:
-        return <Terminal className="w-4 h-4 text-slate-700" />;
+        return <Terminal className="w-4 h-4 text-slate-700 dark:text-slate-300" />;
     }
   };
 
@@ -41,20 +40,20 @@ export const ArchitectureMatrixSection: React.FC<ArchitectureMatrixSectionProps>
     switch (level) {
       case 'Expert':
         return (
-          <span className="text-[10px] font-mono font-bold px-2.5 py-0.5 rounded-full bg-emerald-50 text-emerald-700 border border-emerald-200/80">
+          <span className="text-[10px] font-mono font-bold px-2.5 py-0.5 rounded-full bg-emerald-50 dark:bg-emerald-950/60 text-emerald-700 dark:text-emerald-400 border border-emerald-200/80 dark:border-emerald-800/60">
             PROD EXPERT
           </span>
         );
       case 'Advanced':
         return (
-          <span className="text-[10px] font-mono font-bold px-2.5 py-0.5 rounded-full bg-sky-50 text-sky-700 border border-sky-200/80">
+          <span className="text-[10px] font-mono font-bold px-2.5 py-0.5 rounded-full bg-sky-50 dark:bg-sky-950/60 text-sky-700 dark:text-sky-400 border border-sky-200/80 dark:border-sky-800/60">
             ADVANCED
           </span>
         );
       case 'Exploring':
       default:
         return (
-          <span className="text-[10px] font-mono font-bold px-2.5 py-0.5 rounded-full bg-purple-50 text-purple-700 border border-purple-200/80">
+          <span className="text-[10px] font-mono font-bold px-2.5 py-0.5 rounded-full bg-purple-50 dark:bg-purple-950/60 text-purple-700 dark:text-purple-400 border border-purple-200/80 dark:border-purple-800/60">
             ACTIVE R&D
           </span>
         );
@@ -62,7 +61,7 @@ export const ArchitectureMatrixSection: React.FC<ArchitectureMatrixSectionProps>
   };
 
   return (
-    <section id="architecture" className="py-20 md:py-28 px-6 md:px-12 max-w-7xl mx-auto border-t border-slate-200/70">
+    <section id="architecture" className="py-20 md:py-28 px-6 md:px-12 max-w-7xl mx-auto border-t border-slate-200/70 dark:border-white/10">
       <SectionHeader
         icon="cpu"
         number="03"
@@ -77,13 +76,13 @@ export const ArchitectureMatrixSection: React.FC<ArchitectureMatrixSectionProps>
         {matrix.architecturePrinciples.map((principle, pIdx) => (
           <div
             key={pIdx}
-            className="p-6 md:p-7 rounded-[28px] bg-white/80 backdrop-blur-xl border border-slate-200/90 shadow-2xs hover:shadow-md transition-all duration-200 space-y-2.5"
+            className="p-6 md:p-7 rounded-[28px] bg-white/80 dark:bg-slate-900/80 backdrop-blur-xl border border-slate-200/90 dark:border-white/10 shadow-2xs dark:shadow-[0_15px_30px_-10px_rgba(0,0,0,0.4)] hover:shadow-md transition-all duration-200 space-y-2.5"
           >
-            <div className="flex items-center gap-2 text-sm font-bold text-slate-900">
-              <Zap className="w-4 h-4 text-orange-600" />
+            <div className="flex items-center gap-2 text-sm font-bold text-slate-900 dark:text-white">
+              <Zap className="w-4 h-4 text-orange-600 dark:text-orange-400" />
               <span>{principle.title}</span>
             </div>
-            <p className="text-xs text-slate-600 leading-relaxed font-normal">
+            <p className="text-xs text-slate-600 dark:text-slate-300 leading-relaxed font-normal">
               {principle.summary}
             </p>
             <div className="flex flex-wrap gap-1.5 pt-1.5">
@@ -102,19 +101,19 @@ export const ArchitectureMatrixSection: React.FC<ArchitectureMatrixSectionProps>
         {matrix.categories.map((category) => (
           <div
             key={category.id}
-            className="p-6 md:p-8 rounded-[28px] bg-white/80 backdrop-blur-xl border border-slate-200/90 shadow-2xs space-y-4"
+            className="p-6 md:p-8 rounded-[28px] bg-white/80 dark:bg-slate-900/80 backdrop-blur-xl border border-slate-200/90 dark:border-white/10 shadow-2xs dark:shadow-[0_15px_30px_-10px_rgba(0,0,0,0.4)] space-y-4"
           >
             {/* Category Header */}
-            <div className="flex items-center justify-between pb-3 border-b border-slate-100">
+            <div className="flex items-center justify-between pb-3 border-b border-slate-100 dark:border-white/10">
               <div className="flex items-center gap-3">
-                <div className="p-2.5 rounded-2xl bg-slate-50 border border-slate-200/80 shadow-2xs">
+                <div className="p-2.5 rounded-2xl bg-slate-50 dark:bg-slate-800 border border-slate-200/80 dark:border-white/10 shadow-2xs">
                   {getCategoryIcon(category.iconIdentifier)}
                 </div>
                 <div>
-                  <h3 className="text-base font-bold text-slate-900 tracking-tight">
+                  <h3 className="text-base font-bold text-slate-900 dark:text-white tracking-tight">
                     {category.categoryName}
                   </h3>
-                  <p className="text-xs text-slate-500">
+                  <p className="text-xs text-slate-500 dark:text-slate-400">
                     {category.subtitle}
                   </p>
                 </div>
@@ -126,18 +125,18 @@ export const ArchitectureMatrixSection: React.FC<ArchitectureMatrixSectionProps>
               {category.skills.map((skill, sIdx) => (
                 <div
                   key={sIdx}
-                  className="p-3 rounded-2xl bg-slate-50/70 border border-slate-200/60 flex flex-col sm:flex-row sm:items-center justify-between gap-2 hover:bg-slate-50 transition-colors"
+                  className="p-3 rounded-2xl bg-slate-50/70 dark:bg-slate-800/60 border border-slate-200/60 dark:border-white/5 flex flex-col sm:flex-row sm:items-center justify-between gap-2 hover:bg-slate-50 dark:hover:bg-slate-800 transition-colors"
                 >
                   <div className="min-w-0">
                     <div className="flex items-center gap-2">
-                      <span className="text-xs font-bold text-slate-900">
+                      <span className="text-xs font-bold text-slate-900 dark:text-white">
                         {skill.name}
                       </span>
                       {skill.highlight && (
                         <span className="w-1.5 h-1.5 rounded-full bg-orange-500" />
                       )}
                     </div>
-                    <p className="text-[11px] text-slate-500 truncate mt-0.5 font-normal">
+                    <p className="text-[11px] text-slate-500 dark:text-slate-400 truncate mt-0.5 font-normal">
                       {skill.practicalUse}
                     </p>
                   </div>

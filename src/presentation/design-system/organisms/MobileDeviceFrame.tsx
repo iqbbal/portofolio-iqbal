@@ -72,12 +72,12 @@ export const MobileDeviceFrame: React.FC<MobileDeviceFrameProps> = ({
       onMouseLeave={() => setIsHovered(false)}
     >
       {/* Liquid Glass Smartphone Frame */}
-      <div className="relative w-full rounded-[44px] p-3 bg-white/75 backdrop-blur-2xl border border-white/90 shadow-[0_20px_50px_-15px_rgba(15,23,42,0.1),0_0_0_1px_rgba(255,255,255,0.8)_inset,0_2px_4px_rgba(0,0,0,0.02)] ring-1 ring-slate-200/80 transition-all duration-300 hover:shadow-[0_25px_65px_-15px_rgba(15,23,42,0.16)] hover:border-white">
+      <div className="relative w-full rounded-[44px] p-3 bg-white/75 dark:bg-slate-900/75 backdrop-blur-2xl border border-white/90 dark:border-white/10 shadow-[0_20px_50px_-15px_rgba(15,23,42,0.1)] dark:shadow-[0_20px_50px_-15px_rgba(0,0,0,0.6)] ring-1 ring-slate-200/80 dark:ring-white/10 transition-all duration-300 hover:shadow-[0_25px_65px_-15px_rgba(15,23,42,0.16)] dark:hover:border-white/20 hover:border-white">
         {/* Subtle Glass Highlight on Top Rim */}
-        <div className="absolute top-1.5 inset-x-8 h-2 bg-gradient-to-b from-white/90 to-transparent rounded-full pointer-events-none z-20" />
+        <div className="absolute top-1.5 inset-x-8 h-2 bg-gradient-to-b from-white/90 dark:from-white/20 to-transparent rounded-full pointer-events-none z-20" />
 
         {/* Inner Screen Display with Sleek Crisp Rim */}
-        <div className="relative w-full aspect-[1080/2064] rounded-[26px] overflow-hidden bg-white border border-slate-200/80 shadow-xs">
+        <div className="relative w-full aspect-[1080/2064] rounded-[26px] overflow-hidden bg-white dark:bg-slate-950 border border-slate-200/80 dark:border-slate-800 shadow-xs">
           <AnimatePresence mode="wait">
             {hasImage && activeScreen.imageSrc ? (
               /* ========================================================
@@ -89,7 +89,7 @@ export const MobileDeviceFrame: React.FC<MobileDeviceFrameProps> = ({
                 animate={{ opacity: 1, x: 0 }}
                 exit={{ opacity: 0, x: -20 }}
                 transition={{ duration: 0.28, ease: [0.16, 1, 0.3, 1] }}
-                className="relative w-full h-full bg-white"
+                className="relative w-full h-full bg-white dark:bg-slate-950"
               >
                 <Image
                   src={activeScreen.imageSrc}
@@ -110,17 +110,17 @@ export const MobileDeviceFrame: React.FC<MobileDeviceFrameProps> = ({
                 animate={{ opacity: 1, y: 0, scale: 1 }}
                 exit={{ opacity: 0, y: -8, scale: 0.98 }}
                 transition={{ duration: 0.22, ease: [0.16, 1, 0.3, 1] }}
-                className="flex-1 flex flex-col justify-between h-full bg-[#F8F9FB] p-4 text-slate-900"
+                className="flex-1 flex flex-col justify-between h-full bg-[#F8F9FB] dark:bg-slate-900 p-4 text-slate-900 dark:text-slate-100"
               >
               {/* Top App Header */}
               <div>
-                <div className="flex items-center justify-between pb-2 border-b border-slate-200">
+                <div className="flex items-center justify-between pb-2 border-b border-slate-200 dark:border-slate-800">
                   <div className="flex items-center gap-2">
                     <div
                       className="w-2.5 h-2.5 rounded-full"
                       style={{ backgroundColor: accentColor }}
                     />
-                    <span className="text-xs font-bold text-slate-900 tracking-tight truncate max-w-[170px]">
+                    <span className="text-xs font-bold text-slate-900 dark:text-slate-100 tracking-tight truncate max-w-[170px]">
                       {uiData?.headerTitle || project.title}
                     </span>
                   </div>
@@ -140,12 +140,12 @@ export const MobileDeviceFrame: React.FC<MobileDeviceFrameProps> = ({
 
                 {/* Subheading & Status Banner */}
                 <div className="mt-3">
-                  <p className="text-[13px] font-semibold text-slate-900 leading-tight">
+                  <p className="text-[13px] font-semibold text-slate-900 dark:text-slate-100 leading-tight">
                     {uiData?.subheading || project.subtitle}
                   </p>
                   {uiData?.statusText && (
-                    <div className="flex items-center gap-1.5 mt-1 text-[11px] text-slate-500">
-                      <CheckCircle2 className="w-3 h-3 text-emerald-600 shrink-0" />
+                    <div className="flex items-center gap-1.5 mt-1 text-[11px] text-slate-500 dark:text-slate-400">
+                      <CheckCircle2 className="w-3 h-3 text-emerald-600 dark:text-emerald-400 shrink-0" />
                       <span className="truncate">{uiData.statusText}</span>
                     </div>
                   )}
@@ -157,12 +157,12 @@ export const MobileDeviceFrame: React.FC<MobileDeviceFrameProps> = ({
                     {uiData.stats.map((st, sIdx) => (
                       <div
                         key={sIdx}
-                        className="bg-white border border-slate-200/80 rounded-xl p-2 text-center shadow-2xs"
+                        className="bg-white dark:bg-slate-800 border border-slate-200/80 dark:border-white/10 rounded-xl p-2 text-center shadow-2xs"
                       >
-                        <span className="block text-[12px] font-mono font-bold text-slate-900 leading-none">
+                        <span className="block text-[12px] font-mono font-bold text-slate-900 dark:text-white leading-none">
                           {st.value}
                         </span>
-                        <span className="block text-[9px] font-medium text-slate-500 uppercase tracking-wider mt-1 truncate">
+                        <span className="block text-[9px] font-medium text-slate-500 dark:text-slate-400 uppercase tracking-wider mt-1 truncate">
                           {st.label}
                         </span>
                       </div>
@@ -176,18 +176,18 @@ export const MobileDeviceFrame: React.FC<MobileDeviceFrameProps> = ({
                     {uiData.listItems.slice(0, 3).map((item, lIdx) => (
                       <div
                         key={lIdx}
-                        className="p-2.5 rounded-xl bg-white border border-slate-200/80 flex items-center justify-between shadow-2xs"
+                        className="p-2.5 rounded-xl bg-white dark:bg-slate-800 border border-slate-200/80 dark:border-white/10 flex items-center justify-between shadow-2xs"
                       >
                         <div className="min-w-0 pr-2">
-                          <p className="text-[11px] font-semibold text-slate-900 truncate leading-snug">
+                          <p className="text-[11px] font-semibold text-slate-900 dark:text-slate-100 truncate leading-snug">
                             {item.title}
                           </p>
-                          <p className="text-[10px] text-slate-500 truncate leading-none mt-0.5">
+                          <p className="text-[10px] text-slate-500 dark:text-slate-400 truncate leading-none mt-0.5">
                             {item.subtitle}
                           </p>
                         </div>
                         {item.tag && (
-                          <span className="shrink-0 text-[9px] font-mono px-2 py-0.5 rounded-full bg-slate-100 text-slate-700 border border-slate-200">
+                          <span className="shrink-0 text-[9px] font-mono px-2 py-0.5 rounded-full bg-slate-100 dark:bg-slate-700 text-slate-700 dark:text-slate-300 border border-slate-200 dark:border-slate-600">
                             {item.tag}
                           </span>
                         )}
@@ -219,20 +219,20 @@ export const MobileDeviceFrame: React.FC<MobileDeviceFrameProps> = ({
       {totalScreens > 1 && (
         <div className="mt-4 flex flex-col items-center gap-2 w-full">
           {/* Glass Control Capsule */}
-          <div className="flex items-center justify-between gap-3 px-3 py-1.5 rounded-full bg-white/90 border border-slate-200/90 shadow-sm backdrop-blur-md">
+          <div className="flex items-center justify-between gap-3 px-3 py-1.5 rounded-full bg-white/90 dark:bg-slate-900/90 border border-slate-200/90 dark:border-white/10 shadow-sm backdrop-blur-md">
             {/* Prev Button */}
             <button
               type="button"
               onClick={handlePrev}
               aria-label="Previous screen"
-              className="w-7 h-7 rounded-full bg-slate-100 hover:bg-slate-200 text-slate-700 flex items-center justify-center transition-colors active:scale-95 cursor-pointer"
+              className="w-7 h-7 rounded-full bg-slate-100 dark:bg-slate-800 hover:bg-slate-200 dark:hover:bg-slate-700 text-slate-700 dark:text-slate-200 flex items-center justify-center transition-colors active:scale-95 cursor-pointer"
             >
               <ChevronLeft className="w-4 h-4" />
             </button>
 
             {/* Screen Info & Dots */}
             <div className="flex flex-col items-center min-w-[150px] max-w-[220px] text-center px-1">
-              <span className="text-xs font-bold text-slate-900 truncate w-full">
+              <span className="text-xs font-bold text-slate-900 dark:text-white truncate w-full">
                 {activeScreen.title}
               </span>
               <div className="flex items-center gap-1.5 mt-1">
@@ -247,8 +247,8 @@ export const MobileDeviceFrame: React.FC<MobileDeviceFrameProps> = ({
                       className={cn(
                         'transition-all duration-300 rounded-full cursor-pointer',
                         isSelected
-                          ? 'w-4 h-1.5 bg-slate-900'
-                          : 'w-1.5 h-1.5 bg-slate-300 hover:bg-slate-400'
+                          ? 'w-4 h-1.5 bg-slate-900 dark:bg-white'
+                          : 'w-1.5 h-1.5 bg-slate-300 dark:bg-slate-700 hover:bg-slate-400 dark:hover:bg-slate-600'
                       )}
                     />
                   );
@@ -261,14 +261,14 @@ export const MobileDeviceFrame: React.FC<MobileDeviceFrameProps> = ({
               type="button"
               onClick={handleNext}
               aria-label="Next screen"
-              className="w-7 h-7 rounded-full bg-slate-100 hover:bg-slate-200 text-slate-700 flex items-center justify-center transition-colors active:scale-95 cursor-pointer"
+              className="w-7 h-7 rounded-full bg-slate-100 dark:bg-slate-800 hover:bg-slate-200 dark:hover:bg-slate-700 text-slate-700 dark:text-slate-200 flex items-center justify-center transition-colors active:scale-95 cursor-pointer"
             >
               <ChevronRight className="w-4 h-4" />
             </button>
           </div>
 
           {/* Screen Caption Footer */}
-          <p className="text-[11px] text-slate-500 text-center line-clamp-1 max-w-[340px]">
+          <p className="text-[11px] text-slate-500 dark:text-slate-400 text-center line-clamp-1 max-w-[340px]">
             {activeScreen.caption}
           </p>
         </div>
@@ -276,5 +276,3 @@ export const MobileDeviceFrame: React.FC<MobileDeviceFrameProps> = ({
     </div>
   );
 };
-
-

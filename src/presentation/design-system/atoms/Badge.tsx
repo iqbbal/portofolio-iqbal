@@ -16,13 +16,13 @@ export const Badge: React.FC<BadgeProps> = ({
   ...props
 }) => {
   const variantStyles = {
-    default: 'bg-slate-100/90 text-slate-700 border border-slate-200/80',
-    outline: 'bg-white/80 text-slate-700 border border-slate-200 shadow-2xs',
-    accent: 'bg-orange-50 text-orange-700 border border-orange-200/80',
-    success: 'bg-emerald-50 text-emerald-700 border border-emerald-200/80',
-    mono: 'bg-slate-50 text-slate-800 border border-slate-200 font-mono shadow-2xs',
-    muted: 'bg-slate-100/70 text-slate-500 border border-slate-200/60',
-    pill: 'bg-white text-slate-800 border border-slate-200/80 shadow-xs rounded-full',
+    default: 'bg-slate-100/90 dark:bg-slate-800/90 text-slate-700 dark:text-slate-200 border border-slate-200/80 dark:border-white/10',
+    outline: 'bg-white/80 dark:bg-slate-900/80 text-slate-700 dark:text-slate-200 border border-slate-200 dark:border-white/10 shadow-2xs',
+    accent: 'bg-orange-50 dark:bg-orange-950/50 text-orange-700 dark:text-orange-400 border border-orange-200/80 dark:border-orange-800/50',
+    success: 'bg-emerald-50 dark:bg-emerald-950/50 text-emerald-700 dark:text-emerald-400 border border-emerald-200/80 dark:border-emerald-800/50',
+    mono: 'bg-slate-50 dark:bg-slate-800/80 text-slate-800 dark:text-slate-200 border border-slate-200 dark:border-white/10 font-mono shadow-2xs',
+    muted: 'bg-slate-100/70 dark:bg-slate-800/50 text-slate-500 dark:text-slate-400 border border-slate-200/60 dark:border-white/5',
+    pill: 'bg-white dark:bg-slate-900 text-slate-800 dark:text-slate-200 border border-slate-200/80 dark:border-white/10 shadow-xs rounded-full',
   };
 
   const sizeStyles = {

@@ -27,17 +27,17 @@ export const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
   ) => {
     const variantStyles = {
       primary:
-        'bg-[#0F172A] hover:bg-[#1E293B] text-white font-medium shadow-sm shadow-slate-900/10 active:scale-[0.98] border border-slate-900',
+        'bg-[#0F172A] hover:bg-[#1E293B] text-white font-medium shadow-sm shadow-slate-900/10 active:scale-[0.98] border border-slate-900 dark:bg-white dark:hover:bg-slate-100 dark:text-slate-900 dark:border-white',
       dark:
-        'bg-[#0F172A] hover:bg-[#1E293B] text-white font-medium shadow-sm active:scale-[0.98]',
+        'bg-[#0F172A] hover:bg-[#1E293B] text-white font-medium shadow-sm active:scale-[0.98] dark:bg-slate-800 dark:hover:bg-slate-700',
       secondary:
-        'bg-white hover:bg-slate-50 text-slate-800 border border-slate-200/90 shadow-2xs active:scale-[0.98]',
+        'bg-white hover:bg-slate-50 text-slate-800 dark:bg-slate-900 dark:hover:bg-slate-800 dark:text-slate-100 border border-slate-200/90 dark:border-white/10 shadow-2xs active:scale-[0.98]',
       outline:
-        'bg-transparent hover:bg-slate-100 text-slate-700 hover:text-slate-900 border border-slate-300 active:scale-[0.98]',
+        'bg-transparent hover:bg-slate-100 dark:hover:bg-slate-800 text-slate-700 dark:text-slate-300 hover:text-slate-900 dark:hover:text-white border border-slate-300 dark:border-slate-700 active:scale-[0.98]',
       ghost:
-        'bg-transparent hover:bg-slate-100 text-slate-600 hover:text-slate-900 active:scale-[0.98]',
+        'bg-transparent hover:bg-slate-100 dark:hover:bg-slate-800 text-slate-600 dark:text-slate-400 hover:text-slate-900 dark:hover:text-white active:scale-[0.98]',
       glass:
-        'bg-white/80 hover:bg-white text-slate-800 border border-black/[0.06] shadow-xs backdrop-blur-md active:scale-[0.98]',
+        'bg-white/80 dark:bg-slate-900/80 hover:bg-white dark:hover:bg-slate-800 text-slate-800 dark:text-slate-100 border border-black/[0.06] dark:border-white/10 shadow-xs backdrop-blur-md active:scale-[0.98]',
     };
 
     const sizeStyles = {
@@ -51,7 +51,7 @@ export const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
         ref={ref}
         disabled={disabled}
         className={cn(
-          'inline-flex items-center justify-center font-medium transition-all duration-150 cursor-pointer disabled:opacity-50 disabled:pointer-events-none focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-slate-900/20',
+          'inline-flex items-center justify-center font-medium transition-all duration-150 cursor-pointer disabled:opacity-50 disabled:pointer-events-none focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-slate-900/20 dark:focus-visible:ring-white/20',
           variantStyles[variant],
           sizeStyles[size],
           className
