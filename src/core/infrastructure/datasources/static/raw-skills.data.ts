@@ -22,10 +22,11 @@ export const rawSkillCategoriesData: SkillCategory[] = [
     iconIdentifier: 'layers',
     skills: [
       { name: 'Flutter BLoC', proficiency: 'Expert', practicalUse: 'Standard architecture in Mitsubishi Motors ID & enterprise projects', highlight: true },
-      { name: 'Riverpod', proficiency: 'Advanced', practicalUse: 'Compile-safe dependency injection and reactive state in Bumame App' },
-      { name: 'GetX', proficiency: 'Advanced', practicalUse: 'Lightweight reactive state and route management in Imuni & quick prototypes' },
+      { name: 'Riverpod', proficiency: 'Advanced', practicalUse: 'Compile-safe dependency injection and reactive state in Bumame & Daai+ App' },
+      { name: 'RxJava & RxKotlin', proficiency: 'Expert', practicalUse: 'Reactive event pipelines and asynchronous streams in native Android apps', highlight: true },
+      { name: 'Android LiveData & Flow', proficiency: 'Expert', practicalUse: 'Lifecycle-aware reactive streams in modern Kotlin native apps' },
+      { name: 'GetX', proficiency: 'Advanced', practicalUse: 'Lightweight reactive state and route management in quick prototypes' },
       { name: 'MobX & Provider', proficiency: 'Advanced', practicalUse: 'Observable state and context-based dependency trees' },
-      { name: 'Android LiveData & Flow', proficiency: 'Expert', practicalUse: 'Lifecycle-aware reactive streams in native Android apps' },
     ],
   },
   {
@@ -58,11 +59,11 @@ export const rawSkillCategoriesData: SkillCategory[] = [
     subtitle: 'Hardware APIs, location services, analytics, and deployment',
     iconIdentifier: 'terminal',
     skills: [
+      { name: 'Firebase App Distribution & FCM', proficiency: 'Expert', practicalUse: 'Automated tester distribution, Crashlytics & Cloud Messaging', highlight: true },
       { name: 'Mapbox & Google Maps SDK', proficiency: 'Expert', practicalUse: 'Custom GIS vector mapping, GPS geofencing & offline tile caching' },
       { name: 'RESTful APIs & WebSockets', proficiency: 'Expert', practicalUse: 'Retrofit2, Dio, OkHttp3 with custom interceptors and SSL pinning' },
-      { name: 'Firebase Ecosystem', proficiency: 'Advanced', practicalUse: 'Cloud Messaging (FCM), Crashlytics, Remote Config, Analytics' },
       { name: 'Git & Version Control', proficiency: 'Expert', practicalUse: 'GitFlow, trunk-based branching, pull request reviews' },
-      { name: 'CI/CD & Fastlane', proficiency: 'Intermediate', practicalUse: 'Automated build flavors and distribution pipelines' },
+      { name: 'CI/CD & CodeMagic', proficiency: 'Intermediate', practicalUse: 'Automated multi-flavor build & distribution pipelines' },
     ],
   },
 ];
