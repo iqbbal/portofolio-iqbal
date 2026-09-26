@@ -1,0 +1,91 @@
+import { WorkExperience } from '../../../domain/entities/experience.entity';
+
+export const rawExperienceData: WorkExperience[] = [
+  {
+    id: 'radya-digital',
+    company: 'PT Radya Anugrah Digital',
+    role: 'Mobile Developer',
+    period: 'June 2022 - Present (2025)',
+    startDate: '2022-06',
+    endDate: '2025-05',
+    isCurrent: true,
+    employmentType: 'Full-time',
+    location: 'Bandung / Remote, Indonesia',
+    summary: 'Lead mobile development for enterprise and consumer mobile initiatives (Automotive, Fashion Retail HRIS, HealthTech, and Social Media Analytics) utilizing Flutter, native Android (Kotlin/Java), and foundational multiplatform toolchains.',
+    achievements: [
+      'Architected Umama Mobile Super App (Umama HRIS) using Feature-First Clean Architecture, BLoC Concurrency, Hydrated BLoC, and Dio synchronized token-refresh mutex interceptors.',
+      'Engineered core features for My Mitsubishi Motors ID 2.0 (500K+ users), developing real-time service booking, emergency roadside dispatch, and digital coupon vault.',
+      'Developed Bumame App 2.0 end-to-end with Flutter, streamlining on-demand Medical Check-Up (MCU) appointments and encrypted lab results delivery.',
+      'Built NoLimit Engage social analytics platform, delivering 60 FPS performance for high-density influencer data charts and offline campaign field audits.',
+      'Architected AkselHR (AtlasHR) enterprise HRIS suite with GPS geofencing, mock-location prevention algorithms, and biometric authentication.',
+      'Actively exploring and implementing modern cross-platform paradigms including Jetpack Compose Multiplatform (CMP) and SwiftUI native patterns.',
+    ],
+    coreTechnologies: ['Flutter', 'Dart', 'Kotlin', 'Java', 'BLoC', 'Hydrated BLoC', 'Riverpod', 'Dio', 'Hive', 'Clean Architecture', 'Compose Multiplatform', 'RESTful APIs', 'CI/CD'],
+    milestones: [
+      {
+        title: 'Umama Mobile Super App Launch',
+        date: '2024',
+        impact: 'Automated attendance, leave, kasbon advances, and digital payslips for 1,000+ employees.',
+      },
+      {
+        title: 'Mitsubishi Motors ID 2.0 Nationwide Launch',
+        date: '2023',
+        impact: 'Scaled service booking infrastructure across 300+ dealerships with 99.9% crash-free stability.',
+      },
+      {
+        title: 'Bumame App 2.0 Modernization',
+        date: '2023',
+        impact: 'Increased patient test booking conversion by 38% with sub-2s result delivery.',
+      },
+    ],
+  },
+  {
+    id: 'mediatama-kreasi',
+    company: 'PT Mediatama Kreasi Informatika',
+    role: 'Android Developer',
+    period: 'November 2018 - June 2022',
+    startDate: '2018-11',
+    endDate: '2022-06',
+    isCurrent: false,
+    employmentType: 'Full-time',
+    location: 'Bandung / Cimahi, Indonesia',
+    summary: 'Engineered mission-critical native Android solutions predominantly for Indonesian ministries and government regulatory agencies (Kementerian PUPR, OJK, BPH Migas, Setneg, KKP).',
+    achievements: [
+      'Engineered Visual Inspection System (JICA - PUPR) Android native app with offline-first Room DB and Mapbox GIS mapping for national road condition surveys.',
+      'Developed SIRDK (OJK) mobile briefing app with certificate pinning, root detection, and encrypted document review for the Board of Commissioners.',
+      'Built SIPPP (BPH Migas) nationwide fuel supply monitoring mobile client capturing daily gas station (SPBU) inventory with zero data loss.',
+      'Built Kementerian Kelautan dan Perikanan (KKP) e-Pegawai attendance and civil service administrative workflow system.',
+      'Completed 1 year of intensive Android Developer internship prior to full-time transition, mastering native Android SDK, Java, Kotlin, and MVVM/MVP patterns.',
+    ],
+    coreTechnologies: ['Kotlin', 'Java', 'Android SDK', 'Jetpack', 'Room Database', 'Mapbox SDK', 'MVVM', 'MVP', 'Retrofit2', 'RxJava2', 'SQLite'],
+    milestones: [
+      {
+        title: 'JICA - PUPR Road Inspection System Rollout',
+        date: '2022',
+        impact: 'Synchronized 50,000+ damage points safely in zero-connectivity trans-island highways.',
+      },
+      {
+        title: 'OJK Executive Portal Security Certification',
+        date: '2020',
+        impact: 'Zero security vulnerabilities identified during ministerial compliance audits.',
+      },
+    ],
+  },
+  {
+    id: 'inkubasi-animasi',
+    company: 'Alumni Inkubasi Animasi dan Telematika',
+    role: 'Mobile & Software Engineering Fellow',
+    period: '2018 - 2019',
+    startDate: '2018-01',
+    endDate: '2019-12',
+    isCurrent: false,
+    employmentType: 'Incubation',
+    location: 'Cimahi, Indonesia',
+    summary: 'Selected fellowship program focusing on advanced software development, digital telematics, algorithmic problem-solving, and mobile product innovation.',
+    achievements: [
+      'Gained deep foundational knowledge in scalable software design patterns and native mobile ecosystems.',
+      'Collaborated on real-world industry project prototypes and technical hackathons.',
+    ],
+    coreTechnologies: ['Java', 'Android SDK', 'Object-Oriented Design', 'Git', 'Agile/Scrum'],
+  },
+];
